@@ -1,0 +1,33 @@
+.container{
+    text-align:center;
+    color:blueviolet;
+}
+body{
+    background-color: turquoise;
+}
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color:rgb(150, 143, 219);
+    font-size: 18px;
+  }
+  
+  .table ctd, #table th {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  .tabletr:nth-child(even){background-color: red;}
+  
+  .table tr:hover {background-color: rgb(154, 154, 226);}
+  
+  .table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+

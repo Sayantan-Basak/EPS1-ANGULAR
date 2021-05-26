@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Employee Set Salary</title>
+  </head>
+  <body> 
+    
+    <form>
+
+    <div class="container">
+      <h1>Set/Update Salary</h1>
+        
+
+        <hr> 
+        <label for="eid"><h4><b>Employee ID</b></h4></label>
+        <input type="number" placeholder="Enter Employee ID" id="eid" 
+        [(ngModel)]="salaryDetails.eid" name="eid"  required>
+
+
+       <label for="sid"><h4><b>Salary ID</b></h4></label>
+       <input type="number" placeholder="Enter Salary ID" id="sid" 
+       [(ngModel)]="salaryDetails.sid" name="sid"  required>
+
+       
+      <label for="postHeld"><h4><b>Choose a Post:</b></h4></label>
+
+      <select name="postHeld" id="postHeld" [(ngModel)]="salaryDetails.postHeld">
+        <option value="Senior Manager">Senior Manager</option>
+        <option value="Manager">Manager</option>
+        <option value="Deputy Manager">Deputy Manager</option>
+        <option value="Associate">Associate</option>
+        <option value="Assistant">Assistant</option>
+      </select>
+      <br><br>
+
+
+
+      <label for="payScale"><h4><b>Choose a Payscale:</b></h4></label>
+
+      <select name="payScale" id="payScale" [(ngModel)]="salaryDetails.payScale">
+        <option value="A">Payscale-A</option>
+        <option value="B">Payscale-B</option>
+        <option value="C">Payscale-C</option>
+      </select><br><br>
+
+      <label for="perfAllow"><h4><b>Performance Allowance</b></h4></label>
+        <input type="number" placeholder="Enter Perf allow percent" id="perfAllow" 
+        [(ngModel)]="perfAllow" name="perfAllow"  required>
+
+      <br><br>
+      <button (click)="createSalary()" type="submit" class="createsalbtn"> Create/Update Salary </button>
+
+      <hr>
+    
+      <br/>
+     <!-- 
+     <button (click)="updateSalary()" type="submit" class="updatesalbtn"> Update Salary </button>-->
+
+      </div>
+</form>
+<router-outlet></router-outlet>
+</body>
+</html>
+

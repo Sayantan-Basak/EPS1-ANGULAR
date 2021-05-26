@@ -1,0 +1,46 @@
+.container
+{
+    padding:16px;
+}
+
+input[type=text],
+input[type=number]
+{
+
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+.createsalbtn
+{
+    background-color: green;
+    color:white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 40%;
+    opacity: 0.9;
+}
+
+h1{
+    text-align: center;
+    color:rgb(52, 64, 240);
+
+}
+
+input[type=number] 
+{
+    border: 2px solid green;
+    border-radius: 4px;
+  }
+
+  body{
+    background-color: rgb(240, 173, 240);
+
+  }
+  

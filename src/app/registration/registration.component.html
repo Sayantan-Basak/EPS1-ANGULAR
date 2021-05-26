@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Employee registration</title>
+  </head>
+  <body> 
+    
+   <!-- <form action="action_page.php"> -->
+     <form name="form" #f="ngForm" novalidate>
+
+    <div class="container">
+        <h1>Register here</h1>
+        <p>Please fill this form to create an account</p>
+
+        <hr> 
+        <label for="eid"><h3><b>Employee ID</b></h3></label>
+        <input type="number" class="form-control" [(ngModel)]="employeeDetails.eid" placeholder="Enter Employee ID" #eid="ngModel" [ngClass]="{'is-invalid' :f.submitted && eid.invalid}" id="eid" name="eid"  required/>
+        <div class="invalid-feedback">
+          <div>Eid is required</div>
+
+        </div>
+
+
+       <label for="name"><h3><b>Employee name</b></h3></label>
+       <input type="text" placeholder="Enter Employee Name" id="name" 
+       [(ngModel)]="employeeDetails.ename" name="name"  required>
+
+       
+       <label for="dob"><h3><b>Date of birth</b></h3></label>
+       <input type="date" class="form-control" [(ngModel)]="employeeDetails.dob" (change)="validateDOB(employeeDetails.dob)" placeholder="Enter Date of Birth" #dob="ngModel" [ngClass]="{'is-invalid' :f.submitted && dob.invalid}" id="dob" name="dob"  required/>
+       <div class="invalid-feedback">
+         <div>Dob is required</div>
+        
+       </div>
+       {{errdob}}
+        <!--
+       <label for="dob"><b>Employee Date of Birth</b></label>
+       <input type="date" placeholder="Enter Date of Birth" id="dob" 
+       [(ngModel)]="employeeDetails.dob" name="dob"  required>-->
+        <!--
+       <label for="phone"><b>Employee Phone Number</b></label>
+       <input type="number" placeholder="Enter Phone number" id="phone" 
+       [(ngModel)]="employeeDetails.phone" name="phone"  required>-->
+
+
+       <div class="form-group">
+  	<label><h3><b>Phone number:</b></h3></label>
+  	<input type="number" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched" required
+    	pattern="^\d{10}$" class="form-control" name="phone"
+    	[(ngModel)]="employeeDetails.phone" />
+
+  	<div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+    	<small class="text-danger" *ngIf="phone.errors.required">Phone number is required</small>
+    	<small class="text-danger" *ngIf="phone.errors.pattern">Phone number must contain ten digits </small>
+  	</div>
+
+	</div>
+
+
+       <label for="doj"><h3><b>Employee Date of Joining</b></h3></label>
+       <input type="date" placeholder="Enter Date of Joining" id="doj" 
+       [(ngModel)]="employeeDetails.doj" name="doj"  required>
+
+       <label for="address"><h3><b>Employee Address</b></h3></label>
+        <input type="text" placeholder="Enter Employee Address" id="address" 
+        [(ngModel)]="employeeDetails.address" name="address"  required>
+
+        <label for="txtgender"><h3><b>Enter Gender</b></h3></label>
+        <fieldset required>
+            Male <input type="radio" name="txtgender" value="Male" [(ngModel)]="employeeDetails.gender">
+            Female <input type="radio" name="txtgender" value="Female" [(ngModel)]="employeeDetails.gender">
+        </fieldset>
+        
+     <!--  <label for="email"><b>Email</b></label>
+       <input type="text" placeholder="Enter email" id="email" 
+       [(ngModel)]="employeeDetails.email" name="email"  required>-->
+
+      <!-- <label for="email"><b>Email</b></label>
+       <input type="text" class="form-control" [(ngModel)]="employeeDetails.email" placeholder="Enter email" #email="ngModel" [ngClass]="{'is-invalid' :f.submitted && email.invalid}" id="email" name="email"  required email/>
+       <div  *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+         <div *ngIf="email.errors.required">Email is required</div>
+         <div *ngIf="email.errors.email">Email must be a valid email address</div>
+
+       </div>-->
+
+
+
+       
+	<div class="form-group">
+  	<label><h3><b>Email:</b></h3></label>
+  	<input type="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required
+    	pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" name="email"
+    	[(ngModel)]="employeeDetails.email" />
+
+  	<div *ngIf="email.errors && (email.invalid || email.touched)">
+    	<small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+    	<small class="text-danger" *ngIf="email.errors.pattern">Please provide a valid email address</small>
+  	</div>
+
+	</div>
+
+
+  <div class="form-group">
+  	<label><h3><b>Password:</b></h3></label>
+  	<input type="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required
+    	pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" class="form-control" name="password"
+    	[(ngModel)]="employeeDetails.password" />
+
+  	<div *ngIf="password.errors && (password.invalid || password.touched)">
+    	<small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+    	<small class="text-danger" *ngIf="password.errors.pattern">Password must contain at least one  number and one uppercase and lowercase letter, and at least 5 or more characters</small>
+  	</div>
+
+	</div>
+
+      <!--<label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="psw" 
+      [(ngModel)]="employeeDetails.password" name="psw"  required>
+
+        <div class="form-group">
+          <label for="psw"><b>Password</b></label>
+          <input type="password" classs="form-control" [(ngModel)]="employeeDetails.password" #psw="ngModel" [ngClass]="{'is-invalid' :f.submitted && password.invalid}" name="psw" id="psw" required minlength="6"/>
+          <div *ngIf="f.submitted && psw.invalid" class= "invalid-feedback">
+            <div *ngIf="psw.errors.required">Password is required</div>
+            <div *ngIf="psw.errors.minlength">Password must be atleast 6 characters</div>
+        </div>
+      </div>
+    -->
+
+
+      <label for="postHeld"><h3><b>Choose a Post:</b></h3></label>
+      <select name="postHeld" id="postHeld" [(ngModel)]="employeeDetails.postHeld" required>
+        <option value="Senior Manager">Senior Manager</option>
+        <option value="Manager">Manager</option>
+        <option value="Deputy Manager">Deputy Manager</option>
+        <option value="Associate">Associate</option>
+        <option value="Assistant">Assistant</option>
+      </select>
+      <br><br>
+
+      <hr>
+    
+      <br/>
+
+     <!--<input type="submit" (click)="createEmployee()"  class="registerbtn"/>Register-->
+     <button class="registerbtn"> Register </button>
+     
+     <button (click)="createEmployee()" input type="submit" [disabled]="dobbool" class="registerbtn">Submit</button>
+
+      </div>
+</form>
+<router-outlet></router-outlet>
+</body>
+</html>

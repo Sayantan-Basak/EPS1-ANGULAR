@@ -1,0 +1,57 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>
+  Employee Payroll System-Employee Portal
+</title>
+
+</head>
+<body>
+<h1>Employee Payroll System-Employee Portal</h1>
+<div>
+    <h3>Welcome {{employee.ename}}!!!</h3>
+    <h3><a class="nav-link" routerLink="/app-emp-profile/{{eid}}">View Profile</a></h3>
+</div>
+
+<form>
+    <div class="container">
+       <h3> <label for="salId"><b>Salary ID</b></label></h3>
+       <input type="number" placeholder="Enter Salary ID" id="salId" 
+       [(ngModel)]="salId" name="salId"  required>
+
+    </div>
+<div>
+
+    <h3><button (click)="viewSalary()" type="submit" class="salbtn"> View Salary Details </button></h3>
+    <!--<h3><a class="nav-link" routerLink="/app-emp-salary/{{eid}}">View Salary</a></h3>-->
+</div>
+</form>
+    <!--
+    <form action="#" method="post">
+        <label for="month"><b>Month</b></label><br>
+        <input type="number" placeholder="Enter Month" id="month" name="month" required><br>
+
+        <label for="year"><b>Year</b></label><br>
+        <input type="number" placeholder="Enter Year" id="year" name="year" required><br><br>
+        <button type="submit" class="viewsalbtn"> VIEW SALARY </button>
+    </form>
+-->
+
+<div>
+    
+    <h3><a class="nav-link" routerLink="/app-change-password/{{eid}}">Change password</a></h3>
+
+</div>
+<div>
+    
+  <!--  <h3><a href="#">APPLY LEAVE</a></h3> -->
+
+</div>
+<div>
+    <h3><a class="nav-link" routerLink="/app-home">Logout</a></h3>
+</div>
+<router-outlet></router-outlet>
+</body>
+</html>

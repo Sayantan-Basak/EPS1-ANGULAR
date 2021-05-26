@@ -1,0 +1,53 @@
+body{
+    text-align:center;
+    background-color: rgb(120, 200, 200);
+   /* background-image: url("/assets/emp-back.jpg");*/
+}
+
+
+h1{
+    color:red;
+}
+h3{
+   color:rgb(233, 35, 9); 
+}
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color:rgb(236, 149, 149);
+    font-size: 20px;
+  }
+  
+  .table ctd, #table th {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  .tabletr:nth-child(even){background-color: red;}
+  
+  .table tr:hover {background-color: rgb(154, 154, 226);}
+  
+  .table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .medin1btn{
+      font-size:25px;
+       /* background-color: green;
+        color:white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        width: 20%;
+        opacity: 0.9; */
+  }
+
+  .medin2btn{
+    font-size:25px;
+    
+}

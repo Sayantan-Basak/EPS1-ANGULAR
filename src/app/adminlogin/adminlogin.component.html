@@ -1,0 +1,29 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>
+  Employee Payroll System-Login Admin
+</title>
+
+</head>
+<body>
+  <h1 style="color:blue">Employee Payroll System-Login admin</h1>
+<form>
+  <div class="container">
+    <label for="aid"><h4><b>Admin Id</b></h4></label><br>
+    <input type="number" placeholder="Enter Admin ID" name="aid" [(ngModel)]="aid" required><br>
+    <label for="psw"><h4><b>Password</b></h4></label><br>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="psw" required>
+    <br/><br>
+    <button (click)="onClick()" class="adminlogbtn" type="submit">Login</button>
+    {{errormsg}}
+    <br/>
+        </div>
+    
+</form>
+
+<router-outlet></router-outlet>
+</body>
+</html>
+

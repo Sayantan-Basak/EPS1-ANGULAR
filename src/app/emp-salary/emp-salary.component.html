@@ -1,0 +1,114 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>
+  Employee Payroll System-Employee Salary
+</title>
+
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th style="padding-left:130px;font-size:20px;">Sl. no.</th>
+            <th style="padding-left:130px;font-size:20px;">Salary Component</th>
+            <th style="padding-left:130px;font-size:20px;">Salary Amount</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td>1</td>
+            <td>Basic</td>
+            <td>{{salary.basic | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>2</td>
+            <td>Dearness Allowance</td>
+            <td>{{salary.da | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>3</td>
+            <td>House Rent Allowance</td>
+            <td>{{salary.hra | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>4</td>
+            <td>Travelling Allowance</td>
+            <td>{{salary.ta | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>5</td>
+            <td>Performance Allowance</td>
+            <td>{{salary.pa | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>6</td>
+            <td><b>Gross Salary</b></td>
+            <td>{{salary.gross | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>7</td>
+            <td>Income Tax</td>
+            <td>{{salary.inTax | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>8</td>
+            <td>Provident Fund</td>
+            <td>{{salary.pf | number:'1.2-2'}}</td>
+          </tr>
+          <tr >
+            <td>9</td>
+            <td><b>Net Salary</b></td>
+            <td>{{salary.net  | number:'1.2-2'}}</td>
+          </tr>
+          
+
+        </tbody>
+      </table>
+      </div>
+    <!--<h1>Employee Payroll System-Employee Salary</h1>
+    <h3>Name of Employee : {{employee.ename}} !!!</h3>
+    <h3>Employee Id : {{employee.eid}}</h3>
+    <h3>Salary Month : {{month}}</h3>
+    <h3>Salary Year : {{year}}</h3>
+    <h3>Basic Salary : {{salary.basic}}</h3> 
+    <h3>Dearness Allowance : {{salary.da}}</h3>
+    <h3>House Rent Allowance : {{salary.hra}}</h3> 
+    <h3>Travelling Allowance : {{salary.ta}}</h3>
+    <h3>Performance Allowance : {{salary.pa}}</h3> 
+    <h3>Gross Salary : {{salary.gross}}</h3>
+    <br>
+    <h3>DEDUCTIONS : </h3>  
+    <br>
+    <h3>Income Tax : {{salary.inTax}}</h3> 
+    <h3>Provident Fund : {{salary.pf}}</h3>
+    <h3>Leave Salary : {{ls}}</h3> 
+    <br>
+    <h3>Net Salary : {{salary.net}}</h3> 
+    <br> -->
+    <!--  <div>
+    <input type="checkbox" id="medInsure" name="medInsure" value="Yes">
+  <label for="medInsure"> Pay medical insurance</label><br>
+   </div>-->
+   <div>
+     <h3>Medical Insurance Payment Approval:</h3>
+    <button (click)="obtainMedIn()" input type="submit" class="medin1btn" [disabled]="click2">Get Approval</button>
+
+   </div>
+   <br><br>
+
+   <div>
+   <button (click)="showMedIn()" input type="submit" class="medin2btn" [disabled]="click">Pay Medical Insurance</button>
+   </div>
+   
+   <!--<div class="medin">
+      <h3> Medical Insurance Paid: {{salary.medInsurance}}</h3>
+   </div>-->
+
+   <h3>{{medInsure}}</h3><br>
+    <router-outlet></router-outlet>
+    </body>
+    </html>

@@ -1,0 +1,170 @@
+<!--<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>
+  Employee Payroll System-Employee Portal
+</title>
+
+</head>
+<body>
+ <div class="container">
+    <h3>Update Employee </h3>
+    <div class="form-group">
+        <label for="lbleid">Employee ID</label>
+        <input type="text" class="form-control" id="lbleid" [(ngModel)]="employeeData.eid" readonly />
+
+    </div>
+    <div class="form-group">
+        <label for="lblfname">First Name</label>
+        <input type="text" class="form-control" id="lblfname" [(ngModel)]="employeeData.fname"
+            placeholder="Enter First Name" />
+
+    </div>
+    <div class="form-group">
+        <label for="lbllname">Last Name</label>
+        <input type="text" class="form-control" id="lbllname" [(ngModel)]="employeeData.lname"
+            placeholder="Enter Last Name" />
+
+    </div>
+    <div class="form-group">Gender
+        <div class="form-check form-check-inline">
+            <label class="form-check-label" for="male">Male</label>
+            <input class="form-check-input" type="radio" name="gender" id="male" [(ngModel)]="employeeData.gender"
+                value="Male" checked />
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label" for="female">Female</label>
+            <input class="form-check-input" type="radio" name="gender" id="female" [(ngModel)]="employeeData.gender"
+                value="Female" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lblemail">Email</label>
+        <input type="email" class="form-control" id="lblemail" [(ngModel)]="employeeData.email"
+            placeholder="Enter Email" />
+
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="updateEmployee()">Update</button>
+    </div>
+</div>
+
+
+<p>
+    <button (click)="gotoEmployees(employeeData)">Back</button>
+</p>
+-->
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>
+  Employee Payroll System-Employee Portal
+</title>
+
+</head>
+<body>
+    <h1>Employee Payroll System-Employee Profile</h1>
+    
+    <h3>Welcome {{employee.ename}}!!!</h3>
+
+    <!--<h3>Employee Id : {{employee.eid}}</h3>   
+    
+    <h3>Employee Name : {{employee.ename}}</h3>
+    
+    <h3>Employee Date of birth : {{employee.dob}}</h3>
+
+    <h3>Employee Phone Number : {{employee.phone}} </h3>
+
+    <h3>Employee e-mail : {{employee.email}}</h3>
+
+    <h3>Employee Date of Joining : {{employee.doj}}</h3>
+
+    <h3>Employee Gender : {{employee.gender}}</h3>
+
+    <h3>Employee Post Held : {{employee.postHeld}}</h3>
+
+    <h3>Employee Address : {{employee.address}}</h3>-->
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th style="padding-left:130px;font-size:20px;">Sl. no.</th>
+                <th style="padding-left:180px;font-size:20px;">Employee Details</th>
+                <th style="padding-left:130px;font-size:20px;">Records</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td>1</td>
+                <td>Employee ID</td>
+                <td>{{employee.eid}}</td>
+              </tr>
+              <tr >
+                <td>2</td>
+                <td>Employee Name</td>
+                <td>{{employee.ename}}</td>
+              </tr>
+              <tr >
+                <td>3</td>
+                <td>Date of Birth</td>
+                <td>{{employee.dob}}</td>
+              </tr>
+              <tr >
+                <td>4</td>
+                <td>Phone number</td>
+                <td>{{employee.phone}}</td>
+              </tr>
+              <tr >
+                <td>5</td>
+                <td>Email ID</td>
+                <td>{{employee.email}}</td>
+              </tr>
+              <tr >
+                <td>6</td>
+                <td>Date of Joining</td>
+                <td>{{employee.doj}}</td>
+              </tr>
+              <tr >
+                <td>7</td>
+                <td>Gender</td>
+                <td>{{employee.gender}}</td>
+              </tr>
+              <tr >
+                <td>8</td>
+                <td>Employee Post Held</td>
+                <td>{{employee.postHeld}}</td>
+              </tr>
+              <tr >
+                <td>9</td>
+                <td>Employee Address</td>
+                <td>{{employee.address}}</td>
+              </tr>
+              
+    
+            </tbody>
+          </table>
+          </div>
+
+
+
+
+
+    <h3><a class="nav-link" routerLink="/app-employee-edit/{{eid}}">Edit Employee Details</a></h3>
+<router-outlet></router-outlet>
+    
+</body>
+</html>

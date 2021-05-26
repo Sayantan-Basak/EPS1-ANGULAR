@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>
+  Employee Payroll System-Login employee
+</title>
+
+</head>
+<body>
+  
+<form action="action_page.php" method="post">
+  <div class="container">
+    <h1 style="color:blue">Employee Payroll System-Login employee</h1>
+    <label for="eid"><h4><b>Employee ID</b></h4></label><br>
+    <input type="number" placeholder="Enter Employee ID" 
+    [(ngModel)]="eid" name="eid" required><br>
+    
+    <label for="psw"><h4><b>Password</b></h4></label><br>
+    <input type="password" placeholder="Enter Password" 
+    [(ngModel)]="psw" name="psw" required>
+    <br/><br>
+    <button (click)="onClick()" class="loginbtn" type="submit">Login</button>
+    {{errormsg}}
+    <br/>
+    <!--
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  -->
+        <h3><a class="nav-link" routerLink="/app-forgotpassword">Forgot password</a></h3>
+
+    <h3><a class="nav-link" routerLink="/app-registration">New Employee Registration</a></h3>
+  </div>
+</form>
+<br>
+
+<router-outlet></router-outlet>
+</body>
+</html>

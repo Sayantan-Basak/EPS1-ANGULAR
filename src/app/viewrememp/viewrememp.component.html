@@ -1,0 +1,131 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+<title>Employee Payroll System- View Employee Record and Remove Employee</title>
+</head>
+<body>
+<div class="container">
+    <h3><b>View Employee and Remove Employee</b></h3>
+
+
+    <!--
+    <div class="form-group">
+        <label for="lbleid">Employee ID</label>
+        <input type="text" class="form-control" id="lbleid" [(ngModel)]="employeeData.eid" readonly/>
+
+    </div>
+    <div class="form-group">
+        <label for="lblename">Employee Name</label>
+        <input type="text" class="form-control" id="lblename" [(ngModel)]="employeeData.ename"
+            placeholder="Enter Employee Name" />
+
+    </div>
+
+    <div class="form-group">
+        <label for="lbldob">Employee DOB</label>
+        <input type="date" class="form-control" id="lbldob" [(ngModel)]="employeeData.dob"
+            placeholder="Enter Employee DOB" readonly />
+
+    </div>
+
+    <div class="form-group">
+        <label for="lblphone">Employee  Phone Number</label>
+        <input type="number" class="form-control" id="lblphone" [(ngModel)]="employeeData.phone"
+            placeholder="Enter Employee Phone Number" />
+
+    </div>
+
+    <div class="form-group">
+        <label for="lblemail">Email</label>
+        <input type="email" class="form-control" id="lblemail" [(ngModel)]="employeeData.email"
+            placeholder="Enter Email" />
+
+    </div>
+    
+    <div class="form-group">
+        <label for="lbldoj">Employee DOJ</label>
+        <input type="date" class="form-control" id="lbldoj" [(ngModel)]="employeeData.doj"
+            placeholder="Enter Employee DOJ" readonly/>
+
+    </div>
+    <div class="form-group">Gender
+        <div class="form-check form-check-inline">
+            <label class="form-check-label" for="male">Male</label>
+            <input class="form-check-input" type="radio" name="gender" id="male" [(ngModel)]="employeeData.gender"
+                value="Male" checked />
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label" for="female">Female</label>
+            <input class="form-check-input" type="radio" name="gender" id="female" [(ngModel)]="employeeData.gender"
+                value="Female" />
+        </div>
+    </div>
+    
+    <label for="postHeld">Choose a Post:</label>
+
+    <select name="postHeld" id="postHeld" [(ngModel)]="employeeData.postHeld">
+      <option value="Senior Manager">Senior Manager</option>
+      <option value="Manager">Manager</option>
+      <option value="Deputy Manager">Deputy Manager</option>
+      <option value="Associate">Associate</option>
+      <option value="Assistant">Assistant</option>
+    </select>
+
+    <div class="form-group">
+        <label for="lbladdress">Employee address</label>
+        <input type="text" class="form-control" id="lbladdress" [(ngModel)]="employeeData.address"
+            placeholder="Enter Employee address" />
+
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="updateEmployee()">Update</button>
+    </div>
+</div>
+
+
+<p>
+    <button (click)="gotoEmployees(employeeData)">Back</button>
+</p>
+-->
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Employee ID</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Employee Address</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">PostHeld</th>
+        <th scope="col">Date of Joining</th>
+        <th scope="col">Delete Employee</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of employees">
+      
+        <td>{{e.eid}}</td>
+        <td>{{e.ename}}</td>
+        <td>{{e.address}}</td>
+        <td>{{e.gender}}</td>
+        <td>{{e.dob}}</td>
+        <td>{{e.phone}}</td>
+        <td>{{e.postHeld}}</td>
+        <td>{{e.doj}}</td>
+       <!-- <td><button (click)="onDelete(e)">Delete</button></td>-->
+       <td><button type="button" class="btn btn-danger" (click)="onDelete(e)">Delete</button></td>
+       
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+<router-outlet></router-outlet>
+</body>
+</html>
